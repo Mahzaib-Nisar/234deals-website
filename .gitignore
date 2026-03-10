@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.turbo/
+.env
+.env.*
+backend/.env
+backend/node_modules/
+backend/.git/
+234deals-backend/
+234Deals-website/
+*.log
+dist/
+coverage/
+.DS_Store
+Thumbs.db
