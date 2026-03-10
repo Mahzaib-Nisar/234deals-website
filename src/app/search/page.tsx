@@ -8,11 +8,13 @@ type Listing = {
   product_image_url: string;
 };
 
+import { API_BASE } from "@/lib/api";
+
 async function getListings(q?: string, category?: string): Promise<Listing[]> {
   const params = new URLSearchParams();
   if (q && q.trim()) params.set("search", q.trim());
   if (category && category.trim()) params.set("category", category.trim());
-  const url = `http://localhost:5000/api/listings?${params.toString()}`;
+  const url = `${API_BASE}/api/listings?${params.toString()}`;
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) return [];
   const json = await res.json();
